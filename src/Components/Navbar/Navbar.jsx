@@ -1,6 +1,8 @@
 import logo from "../../assets/logo.png"
 import { AiOutlineShop } from "react-icons/ai";
 import React, { useState, useEffect } from "react";
+import { FcHome, FcAbout, FcServices, FcSearch    } from "react-icons/fc";
+
 
 
 
@@ -24,7 +26,7 @@ const Navbar = () => {
 
   return (
     <header>
-      <nav className={`fixed z-50 w-full flex justify-evenly items-center py-5 ${
+      <nav className={`fixed z-50 w-full flex justify-around items-center py-5 ${
         scrolled ? "bg-white text-black" : "bg-transparent text-white"
       }`} >
         {/* logo */}
@@ -60,6 +62,30 @@ const Navbar = () => {
           <button className='btn btn-error font-bold text-white w-14 sm:w-20'>Login</button>
         </div>
       </nav>
+
+
+      {/* bottom navigation */}
+      <nav className="fixed left-0 bottom-0 right-0 bg-white py-4 z-50 flex justify-around items-center shadow-md border-t lg:hidden">
+        <div className="flex flex-col items-center cursor-pointer hover:bg-black/10 rounded-full p-2 hover:text-blue-600" >
+          < FcHome className="w-5 h-5" />
+          <h2 className="font-bold">Home</h2>
+        </div>
+        <div className="flex flex-col items-center cursor-pointer hover:bg-black/10 rounded-full p-2 hover:text-blue-600" >
+          < FcAbout className="w-5 h-5" />
+          <h2 className="font-bold">About us</h2>
+        </div>
+        <div className="flex flex-col items-center cursor-pointer hover:bg-black/10 rounded-full p-2 hover:text-blue-600" >
+          < FcServices className="w-5 h-5" />
+          <h2 className="font-bold">Service</h2>
+        </div>
+        <div className="flex flex-col items-center cursor-pointer hover:bg-black/10 rounded-full p-2 hover:text-blue-600" >
+          < FcSearch  className="w-5 h-5" />
+          <h2 className="font-bold">Search</h2>
+        </div>
+        
+      </nav>
+
+
     </header>
   )
 }
