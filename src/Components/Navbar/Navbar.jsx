@@ -66,19 +66,19 @@ const Navbar = () => {
 
       {/* bottom navigation */}
       <nav className="fixed left-0 bottom-0 right-0 bg-white py-4 z-50 flex justify-around items-center shadow-md border-t lg:hidden">
-        <div className="flex flex-col items-center cursor-pointer hover:bg-black/10 rounded-full p-2 hover:text-blue-600" >
+        <div className="flex flex-col items-center cursor-pointer" >
           < FcHome className="w-5 h-5" />
           <h2 className="font-bold">Home</h2>
         </div>
-        <div className="flex flex-col items-center cursor-pointer hover:bg-black/10 rounded-full p-2 hover:text-blue-600" >
+        <div className="flex flex-col items-center cursor-pointer" >
           < FcAbout className="w-5 h-5" />
           <h2 className="font-bold">About us</h2>
         </div>
-        <div className="flex flex-col items-center cursor-pointer hover:bg-black/10 rounded-full p-2 hover:text-blue-600" >
+        <div className="flex flex-col items-center cursor-pointer" >
           < FcServices className="w-5 h-5" />
           <h2 className="font-bold">Service</h2>
         </div>
-        <div className="flex flex-col items-center cursor-pointer hover:bg-black/10 rounded-full p-2 hover:text-blue-600" >
+        <div className="flex flex-col items-center cursor-pointer" >
           < FcSearch  className="w-5 h-5" />
           <h2 className="font-bold">Search</h2>
         </div>
