@@ -11,8 +11,8 @@ import { MdOutlineSecurityUpdateGood, MdOutlineVerifiedUser  } from "react-icons
 const WhyUkilLagbe = () => {
   return (
     <div>
-      <div className='py-10 mt-80 lg:mt-20'>
-            <div className='text-center py-5'>
+      <div className=''>
+            <div className='text-center'>
               <h2 className="text-4xl font-bold mb-5">Why you take our service</h2>
               <p className='text-lg mb-5'>our service is best</p>
             </div>

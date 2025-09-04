@@ -65,7 +65,7 @@ const Navbar = () => {
 
 
       {/* bottom navigation */}
-      <nav className="fixed left-0 bottom-0 right-0 bg-white py-4 z-50 flex justify-around items-center shadow-md border-t lg:hidden">
+      <nav className="fixed left-0 bottom-0 right-0 bg-white text-black py-4 z-50 flex justify-around items-center shadow-md border-t lg:hidden">
         <div className="flex flex-col items-center cursor-pointer" >
           < FcHome className="w-5 h-5" />
           <h2 className="font-bold">Home</h2>

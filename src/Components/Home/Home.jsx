@@ -6,12 +6,14 @@ import HowItWorks from '../HowItWorks/HowItWorks'
 import Review from '../Review/Review'
 import MobileApp from '../MobileApp/MobileApp'
 import Trips from '../Trips/Trips'
+import SearchAdvocate from '../SearchAdvocate/SearchAdvocate'
 
 const Home = () => {
   return (
     <>
       <Banner></Banner>
-      <SearchView></SearchView>
+      {/* <SearchView></SearchView> */}
+      <SearchAdvocate></SearchAdvocate>
       <div className='w-9/12 mx-auto'>
         <WhyUkilLagbe></WhyUkilLagbe>
         <HowItWorks></HowItWorks>

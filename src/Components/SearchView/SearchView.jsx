@@ -26,9 +26,12 @@ const SearchView = () => {
 
   return (
     <div className='relative'>
-      <div className='absolute top-30 sm:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center bg-white text-black w-[300px] sm:w-[650px] lg:w-[800px] p-5 rounded-lg'>
-        <h2 className='text-3xl font-bold'>Search ukil</h2>
-        <search className='flex flex-col sm:flex-row mt-10 justify-evenly cursor-pointer space-y-2'>
+      <div className='absolute top-30 sm:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  bg-white text-black w-[300px] sm:w-[650px] lg:w-[800px] p-5 rounded-lg'>
+        <h2 className='text-3xl font-bold mb-5'>Search Advocate</h2>
+       
+          <hr className='text-gray-300' />
+        
+        <div className='flex flex-col sm:flex-row mt-10 justify-evenly cursor-pointer space-y-2'>
           <div>
             {/* select district */}
             <select
@@ -51,7 +54,7 @@ const SearchView = () => {
             </select>
             {/* Show selected value */}
 
-            <p className="mt-2">District: <b>{selectedDistrict}</b></p>
+           
 
 
           </div>
@@ -72,7 +75,7 @@ const SearchView = () => {
                 ))
               }
             </select>
-            <p className="mt-2">Case Type: <b>{selectedCaseType}</b></p>
+            
           </div>
 
           {/* select booking type */}
@@ -90,12 +93,12 @@ const SearchView = () => {
                 ))
               }
             </select>
-            <p className="mt-2">Booking type: <b>{selectedBookingType}</b></p>
+           
           </div>
           <div>
             <button className='btn btn-error text-white mb-8' type='search'>Search</button>
           </div>
-        </search>
+        </div>
       </div>
 
     </div>
