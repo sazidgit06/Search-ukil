@@ -8,10 +8,10 @@ function App() {
 
   return (
     <>
-      <div className='bg-base-200'>
+      <div className='bg-base-200 mulish-font'>
         <Navbar></Navbar>
         <Outlet></Outlet>
-        <hr />
+        <hr className='text-gray-300' />
         <Footer></Footer>
       </div>
     </>

@@ -14,7 +14,7 @@ const Home = () => {
       <Banner></Banner>
       {/* <SearchView></SearchView> */}
       <SearchAdvocate></SearchAdvocate>
-      <div className='w-9/12 mx-auto'>
+      <div className='w-9/12 mx-auto sm:px-5'>
         <WhyUkilLagbe></WhyUkilLagbe>
         <HowItWorks></HowItWorks>
         <Review></Review>

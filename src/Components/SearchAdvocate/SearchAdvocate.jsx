@@ -86,7 +86,7 @@ export default function SearchAdvocate() {
               setIsOpen(!isOpen);
               handleFocus();
             }}
-            className="w-full px-4 py-3 text-left bg-white border border-red-300 rounded-lg shadow-sm hover:border-red-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors duration-200"
+            className="w-full px-4 py-2 sm:py-3 text-left bg-white border border-red-300 rounded-lg shadow-sm hover:border-red-600 cursor-pointer"
           >
             <div className="flex items-center">
               <Icon className="h-5 w-5 text-red-500 mr-3" />
@@ -109,7 +109,7 @@ export default function SearchAdvocate() {
                     setValue(option);
                     setIsOpen(false);
                   }}
-                  className="w-full px-4 py-3 text-left hover:bg-red-50 hover:text-red-600 transition-colors duration-150 border-b border-gray-100 last:border-b-0"
+                  className="w-full px-4 py-3 text-left hover:bg-red-50 hover:text-red-600 transition-colors duration-170 border-b border-gray-100 last:border-b-0"
                 >
                   <div className="flex items-center">
                     <Icon className="h-4 w-4 text-red-400 mr-3" />
@@ -138,16 +138,16 @@ export default function SearchAdvocate() {
         ref={formRef}
         className={`relative transition-all duration-500 ease-in-out ${
           isFocused 
-            ? 'top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 shadow-2xl' 
-            : 'top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 shadow-2xl'
-        } bg-white text-black w-[300px] sm:w-[650px] lg:w-[900px] px-8 py-5 cursor-pointer rounded-lg`}
+            ? 'left-1/2 -translate-x-1/2  -translate-y-[60px] sm:-translate-y-1/2 z-20 shadow-2xl' 
+            : 'left-1/2 -translate-x-1/2  -translate-y-[60px] sm:-translate-y-1/2 z-20 shadow-2xl'
+        } bg-white text-black w-[400px] sm:w-[650px] lg:w-[1100px] px-4 sm:px-8 py-4 sm:py-5 cursor-pointer rounded-lg`}
       >
         <h2 className="text-2xl font-bold text-gray-800">
           Booking Information Form
-          <hr className='mt-5 text-gray-300 mb-5' />
+          <hr className='mt-2 sm:mt-5 text-gray-300 mb-2 sm:mb-5' />
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           <CustomSelect
             label="Select District"
             placeholder="Select District"
@@ -182,8 +182,8 @@ export default function SearchAdvocate() {
           />
         </div>
         
-        <div className="mt-8 text-center">
-          <button className="bg-red-500 hover:bg-red-600 text-white font-medium py-3 px-8 cursor-pointer rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">
+        <div className="mt-4 sm:mt-8 text-center">
+          <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-8 cursor-pointer rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">
             Search
           </button>
         </div>

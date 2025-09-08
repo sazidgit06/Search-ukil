@@ -38,10 +38,10 @@ function Review() {
                 <h2 className="text-4xl font-bold my-5 mt-20">Our Customer's Saying</h2>
                 <p className="mb-10">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, suscipit!</p>
             </div>
-            <div className="slider-container mb-20 cursor-pointer">
+            <div className="slider-container mb-20 cursor-pointer bg-white ">
                 <Slider {...settings}>
                     {/* 0 */}
-                    <div className="shadow-xl px-4 py-2 rounded-lg">
+                    <div className="px-4 py-2 rounded-lg shadow-xl">
                         <p className="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, rem.</p>
                         <div className="flex gap-5">
                             <img className="w-20 h-20" src={icon0} alt="" />
@@ -52,7 +52,7 @@ function Review() {
                         </div>
                     </div>
                     {/* 1 */}
-                    <div className="shadow-xl px-4 py-2 rounded-lg">
+                    <div className="px-4 py-2 rounded-lg shadow-xl">
                         <p className="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, rem.</p>
                         <div className="flex gap-5">
                             <img className="w-20 h-20" src={icon1} alt="" />
@@ -63,7 +63,7 @@ function Review() {
                         </div>
                     </div>
                     {/* 2 */}
-                    <div className="shadow-xl px-4 py-2 rounded-lg">
+                    <div className="px-4 py-2 rounded-lg shadow-xl">
                         <p className="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, rem.</p>
                         <div className="flex gap-5">
                             <img className="w-20 h-20" src={icon2} alt="" />
@@ -74,7 +74,7 @@ function Review() {
                         </div>
                     </div>
                     {/* 3 */}
-                    <div className="shadow-xl px-4 py-2 rounded-lg">
+                    <div className="px-4 py-2 rounded-lg shadow-xl">
                         <p className="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, rem.</p>
                         <div className="flex gap-5">
                             <img className="w-20 h-20" src={icon3} alt="" />
@@ -85,7 +85,7 @@ function Review() {
                         </div>
                     </div>
                     {/* 4 */}
-                    <div className="shadow-xl px-4 py-2 rounded-lg">
+                    <div className="px-4 py-2 rounded-lg shadow-xl">
                         <p className="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, rem.</p>
                         <div className="flex gap-5">
                             <img className="w-20 h-20" src={icon4} alt="" />
@@ -95,7 +95,6 @@ function Review() {
                             </div>
                         </div>
                     </div>
-
                 </Slider>
             </div>
         </>
