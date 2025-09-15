@@ -2,7 +2,8 @@ import logo from "../../assets/logo.png"
 import { AiOutlineShop } from "react-icons/ai";
 import React, { useState, useEffect } from "react";
 import { FcHome, FcAbout, FcServices, FcSearch    } from "react-icons/fc";
-
+import "./Navbar.css";
+import { NavLink } from "react-router-dom";
 
 
 
@@ -34,18 +35,10 @@ const Navbar = () => {
           <a href="/">
             <img className='w-20 md:w-30' src={logo} alt="" />
           </a>
-
           <ul className='flex gap-2 hidden lg:block lg:flex text-lg'>
-            <li>
-              <a className='hover:bg-base-100/10 p-2 rounded' href="/">Home</a>
-            </li>
-            <li>
-              <a className='hover:bg-base-100/10 p-2 rounded' href="/">Find a Lawyer</a>
-            </li>
-            <li>
-              <a className='hover:bg-base-100/10 p-2 rounded' href="/">Legal Services</a>
-            </li>
-
+              <NavLink className='hover:bg-base-100/10 p-2 rounded' to="/">Home</NavLink>
+              <NavLink className='hover:bg-base-100/10 p-2 rounded' to="/findlawyer">Find a Lawyer</NavLink>
+              <NavLink className='hover:bg-base-100/10 p-2 rounded' to="/legalservice">Legal Services</NavLink>
           </ul>
         </div>
         {/* login & language translation */}

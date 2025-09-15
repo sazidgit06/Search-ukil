@@ -9,6 +9,8 @@ import {
 } from "react-router-dom";
 import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
 import Home from './Components/Home/Home.jsx';
+import FindLawyer from './Components/FindLawyer/FindLawyer.jsx';
+import LegalService from './Components/LegalService/LegalService.jsx';
 
 const router = createBrowserRouter([
   {
@@ -18,7 +20,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        Component: Home
+      },
+      {
+        path: "/findlawyer",
+        Component: FindLawyer
+      },
+      {
+        path: "/legalservice",
+        Component: LegalService
       }
     ]
   },
