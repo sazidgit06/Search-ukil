@@ -14,7 +14,7 @@ const Banner = () => {
       <div className='relative text-white'>
         <img className='h-[400px] sm:h-[700px] w-full object-fill' src={img} alt="" />
         <div className='absolute top-25 sm:top-50 left-15 sm:left-52 max-w-[350px] sm:max-w-[400px] text-start space-y-4 sm:space-y-6'>
-          <h2 className='text-6xl font-medium'>Schedule Your Consult with</h2>
+          <h2 className='text-4xl sm:text-6xl font-medium sm:font-bold'>Schedule Your Consult</h2>
           <button className='bg-red-500 rounded-md hover:bg-red-600 px-4 py-2 cursor-pointer text-white font-bold flex items-center gap-1'>
             <CiMobile3  className='h-6 w-6'/>
             Get the app

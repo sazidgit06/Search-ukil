@@ -12,7 +12,7 @@ const HowItWorks = () => {
 
     return (
         <div>
-            <div className='text-center space-y-5 mt-10 mb-10'>
+            <div className='text-center space-y-5 mt-30 mb-16'>
                 <h2 className='text-5xl font-bold'>How it works</h2>
                 <p>Lorem ipsum dolor sit amet.</p>
             </div>
@@ -56,7 +56,7 @@ const HowItWorks = () => {
                     </div>
                 </div>
                 <div>
-                    <img className='rounded-2xl' src={curretnImage} alt="" />
+                    <img className='rounded-2xl h-full object-cover' src={curretnImage} alt="" />
                 </div>
             </div>
         </div>

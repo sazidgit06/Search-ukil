@@ -50,50 +50,10 @@ const Footer = () => {
                     </div>
                     <div className='text-start sm:text-end'>
                         <h2 className='font-bold sm:text-xl mb-4'>Download Truck Lagbe App</h2>
-                        <button><img src={img2} alt="" className='w-40' /></button>
+                        <button><img src={img2} alt="" className='w-40 mb-25 lg:mb-0' /></button>
                     </div>
                 </div>
 
-            </div>
-            <div className='bg-white h-[200px]'>
-                <div className='w-9/12 mx-auto'>
-                    <div className='flex justify-start items-center pt-6'>
-                        <h2 className='font-medium mb-5'>TRUCK CATEGORIES & BRANDS</h2>
-                        <hr className='w-40 sm:w-[890px] text-gray-300 mb-5' />
-                    </div>
-                    <div className='grid grid-cols-1 sm:grid-cols-5 gap-5'>
-                        <div>
-                            <h3 className='font-medium'>Pickup Trucks</h3>
-                            <p>7 feet 1 ton</p>
-                            <p>7 feet 1 ton</p>
-                            <p>7 feet 1 ton</p>
-                        </div>
-                        <div>
-                            <h3 className='font-medium'>Pickup Trucks</h3>
-                            <p>7 feet 1 ton</p>
-                            <p>7 feet 1 ton</p>
-                            <p>7 feet 1 ton</p>
-                        </div>
-                        <div>
-                            <h3 className='font-medium'>Pickup Trucks</h3>
-                            <p>7 feet 1 ton</p>
-                            <p>7 feet 1 ton</p>
-                            <p>7 feet 1 ton</p>
-                        </div>
-                        <div>
-                            <h3 className='font-medium'>Pickup Trucks</h3>
-                            <p>7 feet 1 ton</p>
-                            <p>7 feet 1 ton</p>
-                            <p>7 feet 1 ton</p>
-                        </div>
-                        <div>
-                            <h3 className='font-medium'>Pickup Trucks</h3>
-                            <p>7 feet 1 ton</p>
-                            <p>7 feet 1 ton</p>
-                            <p>7 feet 1 ton</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </>
     )
