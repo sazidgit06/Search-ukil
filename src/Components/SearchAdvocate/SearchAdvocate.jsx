@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDown, MapPin, FileText, Calendar } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export default function SearchAdvocate() {
   const [selectedDistrict, setSelectedDistrict] = useState('');
@@ -13,6 +14,12 @@ export default function SearchAdvocate() {
   // New state for focus behavior
   const [isFocused, setIsFocused] = useState(false);
   const formRef = useRef(null);
+
+  const navigate = useNavigate();
+  
+   const handleSearchBtn = () => {
+    navigate("/allLawyer")
+  }
 
   const districts = [
     'Dhaka', 'Chattogram', 'Rajshahi', 'Khulna', 'Barishal', 'Sylhet', 'Rangpur', 'Mymensingh',
@@ -124,6 +131,7 @@ export default function SearchAdvocate() {
   };
 
   return (
+    
     <div className="">
       {/* Background overlay when focused */}
       {isFocused && (
@@ -181,7 +189,7 @@ export default function SearchAdvocate() {
         </div>
 
         <div className="mt-2 sm:mt-5 text-center">
-          <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-8 cursor-pointer rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">
+          <button onClick={handleSearchBtn} className="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-8 cursor-pointer rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">
             Search
           </button>
         </div>

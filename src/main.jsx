@@ -11,6 +11,8 @@ import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
 import Home from './Components/Home/Home.jsx';
 import FindLawyer from './Components/FindLawyer/FindLawyer.jsx';
 import LegalService from './Components/LegalService/LegalService.jsx';
+import allLawyer from './Components/allLawyer/allLawyer.jsx';
+import LawyerProfile from './Components/LawyerProfile/LawyerProfile.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
       {
         path: "/legalservice",
         Component: LegalService
+      },
+      {
+        path: "/allLawyer",
+        Component: allLawyer
+      },
+      {
+        path: "/lawyerProfile",
+        Component: LawyerProfile
       }
     ]
   },

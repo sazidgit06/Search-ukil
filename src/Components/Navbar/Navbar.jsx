@@ -26,7 +26,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header>
+    <header className="">
       <nav className={`fixed z-50 w-full flex justify-around items-center py-5 ${
         scrolled ? "bg-white text-black" : "bg-transparent text-white"
       }`} >
