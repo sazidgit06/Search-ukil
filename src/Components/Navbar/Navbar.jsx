@@ -37,7 +37,7 @@ const Navbar = () => {
           </a>
           <ul className='flex gap-2 hidden lg:block lg:flex text-lg'>
               <NavLink className='hover:bg-base-100/10 p-2 rounded' to="/">Home</NavLink>
-              <NavLink className='hover:bg-base-100/10 p-2 rounded' to="/findlawyer">Find a Lawyer</NavLink>
+              <NavLink className='hover:bg-base-100/10 p-2 rounded' to="/allLawyer">Find a Lawyer</NavLink>
               <NavLink className='hover:bg-base-100/10 p-2 rounded' to="/legalservice">Legal Services</NavLink>
           </ul>
         </div>

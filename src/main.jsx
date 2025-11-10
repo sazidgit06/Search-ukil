@@ -13,6 +13,7 @@ import FindLawyer from './Components/FindLawyer/FindLawyer.jsx';
 import LegalService from './Components/LegalService/LegalService.jsx';
 import allLawyer from './Components/allLawyer/allLawyer.jsx';
 import LawyerProfile from './Components/LawyerProfile/LawyerProfile.jsx';
+import Hire from './Components/Hire/Hire.jsx';
 
 const router = createBrowserRouter([
   {
@@ -24,21 +25,26 @@ const router = createBrowserRouter([
         path: "/",
         Component: Home
       },
-      {
-        path: "/findlawyer",
-        Component: FindLawyer
-      },
+      // {
+      //   path: "/allLawyer",
+      //   Component: allLawyer
+      // },
       {
         path: "/legalservice",
         Component: LegalService
       },
       {
+        loader: () => fetch("./LawyerDetails.json"),
         path: "/allLawyer",
         Component: allLawyer
       },
       {
         path: "/lawyerProfile",
         Component: LawyerProfile
+      },
+      {
+        path: "/hire",
+        Component: Hire
       }
     ]
   },

@@ -1,8 +1,26 @@
 import React, { useState } from 'react';
-import ukil1 from "../../assets/ukil-1.webp";
 import { Star, MapPin, Briefcase, Award, Users, ChevronDown, ChevronUp } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { X, Send } from 'lucide-react';  
 
 export default function LawyerProfile() {
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const handleSend = () => {
+    if (message.trim()) {
+      alert(`Message sent: ${message}`);
+      setMessage('');
+      setIsOpen(false);
+    }
+  };
+
+  const navigate = useNavigate()
+  const handleHireBtn = () => {
+    navigate("/hire");
+  }
+
   const [expandedFAQ, setExpandedFAQ] = useState(null);
 
   const toggleFAQ = (index) => {
@@ -28,7 +46,7 @@ export default function LawyerProfile() {
             {/* Profile Image */}
             <div className="flex-shrink-0">
               <div className="w-52 h-52 bg-white border-4 border-white rounded shadow-lg overflow-hidden">
-                <img src={ukil1} alt="Lawyer" className="w-full h-full object-contain" />
+                <img src="assets/ukil-1.webp" alt="Lawyer" className="w-full h-full object-contain" />
               </div>
             </div>
 
@@ -44,14 +62,63 @@ export default function LawyerProfile() {
                   <p className="text-sm text-gray-500">Sitanagar, Ctg, Bangladesh</p>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <button className="px-6 py-2 border border-blue-600 text-blue-600 rounded hover:bg-blue-50">
-                    Message
+                  <button
+                    onClick={() => setIsOpen(true)}
+                    className="text-blue-500 font-semibold px-6 py-3 rounded-lg shadow-lg transition-all duration-200 flex items-center gap-2"
+                  >
+                    <Send size={20} />
+                    Send Message
                   </button>
-                  <button className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                  <button onClick={handleHireBtn} className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
                     Hire
                   </button>
                 </div>
               </div>
+
+              {isOpen && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+                  {/* Modal Content */}
+                  <div className="bg-white rounded-xl shadow-2xl w-full max-w-md p-6 relative animate-fade-in">
+                    {/* Close Button */}
+                    <button
+                      onClick={() => setIsOpen(false)}
+                      className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+                    >
+                      <X size={24} />
+                    </button>
+
+                    {/* Modal Header */}
+                    <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                      Send Message
+                    </h2>
+
+                    {/* Message Textarea */}
+                    <textarea
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      placeholder="Type your message here..."
+                      className="w-full h-40 p-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none resize-none"
+                    />
+
+                    {/* Action Buttons */}
+                    <div className="flex gap-3 mt-4">
+                      <button
+                        onClick={() => setIsOpen(false)}
+                        className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 rounded-lg transition-colors"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        onClick={handleSend}
+                        className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded-lg transition-colors flex items-center justify-center gap-2"
+                      >
+                        <Send size={18} />
+                        Send
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               <div className="flex items-center gap-4 mt-4">
                 <div className="flex items-center gap-1">
@@ -184,7 +251,7 @@ export default function LawyerProfile() {
                     <div>
                       <h4 className="font-semibold text-sm">Military Court</h4>
                       <p className="text-xs text-gray-500">
-                        I came in CAR | MAN | RAW | MAC | RAW | EDD | CAM | LAR | CAM | CAMR | LAST | MAR | CAME | LAR | EWA | 
+                        I came in CAR | MAN | RAW | MAC | RAW | EDD | CAM | LAR | CAM | CAMR | LAST | MAR | CAME | LAR | EWA |
                         CAME | LAR | MAC | LAR | Sec cases
                       </p>
                     </div>
