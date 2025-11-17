@@ -1,9 +1,47 @@
 import React, { useState } from 'react';
 import { Star, MapPin, Briefcase, Award, Users, ChevronDown, ChevronUp } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { X, Send } from 'lucide-react';  
+import { X, Clock, Video, Send } from 'lucide-react';
+import logo from "../../assets/logo - copy.png"
 
 export default function LawyerProfile() {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(17);
+  const [selectedTime, setSelectedTime] = useState('10:00 AM');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: ''
+  });
+
+  const today = new Date();
+  const currentDay = today.getDate();
+
+  const currentMonth = 'November 2025';
+  const daysInMonth = [
+    [1, 2, 3, 4, 5, 6, 7],
+    [8, 9, 10, 11, 12, 13, 14],
+    [15, 16, 17, 18, 19, 20, 21],
+    [22, 23, 24, 25, 26, 27, 28],
+    [29, 30]
+  ];
+
+  const isPastDate = (day) => {
+    return day < currentDay;
+  };
+
+  const timeSlots = [
+    '10:00 AM', '10:30 AM', '11:00 PM', '11:30 PM',
+    '12:00 PM', '02:00 PM', '02:30 PM', '03:00 PM'
+  ];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Booking submitted:', { ...formData, selectedDate, selectedTime });
+    alert('Meeting scheduled successfully!');
+    setIsModalOpen(false);
+  };
 
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
@@ -64,12 +102,12 @@ export default function LawyerProfile() {
                 <div className="flex flex-col gap-2">
                   <button
                     onClick={() => setIsOpen(true)}
-                    className="text-blue-500 font-semibold px-6 py-3 rounded-lg shadow-lg transition-all duration-200 flex items-center gap-2"
+                    className="text-blue-500 font-semibold cursor-pointer px-6 py-3 rounded-lg shadow-lg transition-all duration-200 flex items-center gap-2"
                   >
                     <Send size={20} />
                     Send Message
                   </button>
-                  <button onClick={handleHireBtn} className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                  <button onClick={handleHireBtn} className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 cursor-pointer">
                     Hire
                   </button>
                 </div>
@@ -82,7 +120,7 @@ export default function LawyerProfile() {
                     {/* Close Button */}
                     <button
                       onClick={() => setIsOpen(false)}
-                      className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+                      className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
                     >
                       <X size={24} />
                     </button>
@@ -104,13 +142,13 @@ export default function LawyerProfile() {
                     <div className="flex gap-3 mt-4">
                       <button
                         onClick={() => setIsOpen(false)}
-                        className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 rounded-lg transition-colors"
+                        className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 rounded-lg transition-colors cursor-pointer"
                       >
                         Cancel
                       </button>
                       <button
                         onClick={handleSend}
-                        className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded-lg transition-colors flex items-center justify-center gap-2"
+                        className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer"
                       >
                         <Send size={18} />
                         Send
@@ -186,10 +224,141 @@ export default function LawyerProfile() {
                   <div className="text-sm text-gray-500">66 Nitrated - USD 1,200</div>
                 </div>
               </div>
-              <button className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 mt-3">
+              <button onClick={() => setIsModalOpen(true)} className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 mt-3 cursor-pointer">
                 Book Now
               </button>
             </div>
+
+            {/* book now modal */}
+
+            {isModalOpen && (
+              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 ">
+                <div className="bg-white rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto ">
+                  <div className="p-8 ">
+                    {/* Header */}
+                    <div className="flex justify-between items-start mb-8">
+                      <div className="flex items-center gap-4">
+                        <img
+                          src={logo}
+                          alt="Logo"
+                          className="w-20 h-20"
+                        />
+                        <div>
+                          <h2 className="text-2xl font-bold text-gray-800">Schedule a Meeting</h2>
+                          <div className="flex items-center gap-2 text-gray-600 mt-1">
+                            <Clock className="w-4 h-4 text-teal-500" />
+                            <span>15 min</span>
+                          </div>
+                          <div className="flex items-center gap-2 text-gray-600 mt-2">
+                            <Video className="w-5 h-5 text-teal-500" />
+                            <span className="text-sm">Web conferencing details provided upon confirmation.</span>
+                          </div>
+                        </div>
+                      </div>
+                      <button
+                        onClick={() => setIsModalOpen(false)}
+                        className="text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
+                      >
+                        <X className="w-6 h-6" />
+                      </button>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-2">
+                      {/* Left Column - Form */}
+                      <div className="space-y-4">
+                        <input
+                          type="text"
+                          placeholder="Your Name"
+                          value={formData.name}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                        />
+                        <input
+                          type="email"
+                          placeholder="Your Email"
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                        />
+                        <input
+                          type="tel"
+                          placeholder="Your Phone Number"
+                          value={formData.phone}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                        />
+                      </div>
+
+                      {/* Right Column - Date & Time Selection */}
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-800 text-center mb-4">
+                          Select a Date & Time
+                        </h3>
+                        <p className="text-center text-gray-600 font-semibold mb-4">{currentMonth}</p>
+
+                        {/* Calendar */}
+                        <div className="mb-6">
+                          {daysInMonth.map((week, weekIdx) => (
+                            <div key={weekIdx} className="grid grid-cols-8 gap-3 mb-2">
+                              {week.map((day) => {
+                                const isPast = isPastDate(day);
+                                return (
+                                  <button
+                                    key={day}
+                                    onClick={() => !isPast && setSelectedDate(day)}
+                                    disabled={isPast}
+                                    className={`aspect-square flex items-center justify-center rounded-full font-semibold transition-all ${isPast
+                                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                                        : selectedDate === day
+                                          ? 'bg-teal-500 text-white ring-2 ring-teal-600'
+                                          : 'hover:bg-gray-100 text-gray-700'
+                                      }`}
+                                  >
+                                    {day}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Time Slots */}
+                        <div className="grid grid-cols-2 gap-3 max-h-64 overflow-y-auto pr-2">
+                          {timeSlots.map((time) => (
+                            <button
+                              key={time}
+                              onClick={() => setSelectedTime(time)}
+                              className={`py-3 px-4 rounded-lg font-semibold transition-all ${selectedTime === time
+                                ? 'bg-orange-500 text-white'
+                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                }`}
+                            >
+                              {time}
+                            </button>
+                          ))}
+                        </div>
+
+                        <p className="text-center text-sm text-gray-500 mt-4">
+                          Our Time zone: Asia/Dhaka (9:30am)
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Submit Button */}
+                    <div className="mt-8 text-center">
+                      <button
+                        onClick={handleSubmit}
+                        className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-12 rounded-lg transition-colors text-lg"
+                      >
+                        Submit to Schedule a Meeting
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* end book now modal */}
 
             {/* Languages */}
             <div className="bg-white rounded-lg shadow p-4">

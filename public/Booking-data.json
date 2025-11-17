@@ -1,0 +1,5 @@
+{
+  "districts": ["Dhaka", "Chittagong", "Rajshahi", "Khulna", "Sylhet", "Barisal", "Bogura", "Comilla", "Rangpur", "Mymensingh"],
+  "caseTypes": ["Civil", "Criminal", "Family", "Corporate", "Property"],
+  "bookingTypes": ["Online", "In-Person", "Phone", "Email"]
+}
