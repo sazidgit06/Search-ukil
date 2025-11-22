@@ -1,9 +1,9 @@
 import logo from "../../assets/logo.png"
 import { AiOutlineShop } from "react-icons/ai";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, use } from "react";
 import { FcHome, FcAbout, FcServices, FcSearch    } from "react-icons/fc";
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 
 
@@ -13,7 +13,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 1) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -24,6 +24,11 @@ const Navbar = () => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navigate = useNavigate();
+  const handleLoginBtn = () => {
+    navigate("/LoginForm");
+  }
 
   return (
     <header className="">
@@ -43,10 +48,11 @@ const Navbar = () => {
         </div>
         {/* login & language translation */}
         <div className='flex gap-2 lg:gap-6'>
-          <button className='btn btn-outline px-1 lg:px-6 lg:py-2  rounded flex items-center gap-1 cursor-pointer font-bold'>
+          {/* <button className='btn btn-outline px-1 lg:px-6 lg:py-2  rounded flex items-center gap-1 cursor-pointer font-bold'>
             <img className='w-5 h-5' src="https://img.icons8.com/color/48/usa.png" alt="usa" />
-            EN</button>
-          <button className='bg-red-500 rounded-md cursor-pointer hover:bg-red-600 font-bold text-white w-14 sm:w-20'>Login</button>
+            EN</button> */}
+          <button className='bg-[#0e4e81] rounded-md cursor-pointer hover:bg-[#003867] font-bold text-white w-14 sm:w-20 p-2'>Register</button>
+          <button onClick={handleLoginBtn} className='bg-[#4c9ad9] rounded-md cursor-pointer hover:bg-[#2572a8] font-bold text-white w-14 sm:w-20 p-2'>Login</button>
         </div>
       </nav>
 

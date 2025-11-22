@@ -14,6 +14,7 @@ import LegalService from './Components/LegalService/LegalService.jsx';
 import allLawyer from './Components/allLawyer/allLawyer.jsx';
 import LawyerProfile from './Components/LawyerProfile/LawyerProfile.jsx';
 import Hire from './Components/Hire/Hire.jsx';
+import LoginForm from './Components/Login/LoginForm.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/hire",
         Component: Hire
+      },
+      {
+        path: "/LoginForm",
+        Component: LoginForm
       }
     ]
   },

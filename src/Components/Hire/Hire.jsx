@@ -1,42 +1,41 @@
 import React, { useState } from 'react';
 import { Scale, Shield, FileText, Users, Clock, CheckCircle, Phone, Mail, MapPin } from 'lucide-react';
+import allLawyerBanner from '../../assets/allLawyerBanner.jpg';
 
 export default function Hire() {
 
     const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    category: '',
-    description: '',
-    urgency: 'normal'
-  });
-  const [submitted, setSubmitted] = useState(false);
+        name: '',
+        email: '',
+        phone: '',
+        category: '',
+        description: '',
+        urgency: 'normal'
+    });
+    const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
-  const handleSubmit = () => {
-    if (formData.name && formData.phone && formData.category && formData.description) {
-      setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 5000);
-    }
-  };
+    const handleSubmit = () => {
+        if (formData.name && formData.phone && formData.category) {
+            setSubmitted(true);
+            setTimeout(() => setSubmitted(false), 5000);
+        } else {
+            alert("Please fill in all required fields.");
+        }
+    };
 
     return (
         <div>
+            <img className='absolute mx-auto top-0 w-full h-[80px] object-cover' src={allLawyerBanner} alt="" />
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-30 pb-10">
+
                 <div className="backdrop-blur-sm rounded-2xl p-8 border border-slate-700">
                     <h2 className="text-3xl font-bold text-center mb-8">
                         Request a Consultation
                     </h2>
-
-                    {submitted && (
-                        <div className="mb-6 p-4 bg-green-500/20 border border-green-500 rounded-lg text-green-400 text-center">
-                            Thank you! We'll contact you within 24 hours.
-                        </div>
-                    )}
 
                     <div className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -119,7 +118,7 @@ export default function Hire() {
 
                         <div>
                             <label className="block text-sm font-medium mb-2">
-                                Describe Your Legal Issue *
+                                Describe Your Legal Issue 
                             </label>
                             <textarea
                                 name="description"
@@ -133,10 +132,16 @@ export default function Hire() {
 
                         <button
                             onClick={handleSubmit}
-                            className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-4 rounded-lg transition-all duration-300 transform hover:scale-105"
+                            className="w-full cursor-pointer bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-4 rounded-lg transition-all duration-300 transform hover:scale-105"
                         >
                             Submit Request
                         </button>
+                        {submitted && (
+                            <div className="mb-6 p-4 bg-green-500/20 border border-green-500 rounded-lg text-green-400 text-center">
+                                Thank you! We'll contact you within 24 hours.
+                            </div>
+                        )}
+
                     </div>
                 </div>
             </div>
@@ -148,17 +153,17 @@ export default function Hire() {
                         <div className="flex flex-col items-center">
                             <Phone className="w-8 h-8 text-blue-400 mb-3" />
                             <h3 className="font-semibold mb-1">Call Us</h3>
-                            <p className="text-slate-400">+880 1XXX-XXXXXX</p>
+                            <p className="text-slate-400">+880 1713 726345</p>
                         </div>
                         <div className="flex flex-col items-center">
                             <Mail className="w-8 h-8 text-blue-400 mb-3" />
                             <h3 className="font-semibold mb-1">Email Us</h3>
-                            <p className="text-slate-400">info@legalservices.bd</p>
+                            <p className="text-slate-400">ukilvai@gmail.com</p>
                         </div>
                         <div className="flex flex-col items-center">
                             <MapPin className="w-8 h-8 text-blue-400 mb-3" />
                             <h3 className="font-semibold mb-1">Visit Us</h3>
-                            <p className="text-slate-400">Dhaka, Bangladesh</p>
+                            <p className="text-slate-400">Joleswaritola, Bogura, Bangladesh</p>
                         </div>
                     </div>
                 </div>

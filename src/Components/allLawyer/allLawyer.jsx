@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Search, Star, MapPin, Briefcase } from 'lucide-react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
+import allLawyerBanner from '../../assets/allLawyerBanner.jpg'
 
 const allLawyer = () => {
   const [filters, setFilters] = useState({
@@ -154,7 +155,8 @@ const allLawyer = () => {
 
 
     
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="relative min-h-screen bg-gray-50 pt-20">
+      <img className='absolute mx-auto top-0 w-full h-[80px] object-cover' src={allLawyerBanner} alt="" />
 
       <div className="max-w-7xl mx-auto px-4 py-6">
         {/* Search Bar */}

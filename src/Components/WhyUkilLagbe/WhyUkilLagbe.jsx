@@ -1,11 +1,8 @@
 import React from 'react'
-import poster from "../../assets/en-poster.webp";
+import poster from "../../assets/en-poster.png";
 import { HiOutlineRocketLaunch } from "react-icons/hi2";
 import { FaHandHoldingDollar } from "react-icons/fa6";
 import { MdOutlineSecurityUpdateGood, MdOutlineVerifiedUser } from "react-icons/md";
-
-
-
 
 
 const WhyUkilLagbe = () => {
