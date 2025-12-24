@@ -30,9 +30,9 @@ const SearchableSelect = ({ icon: Icon, placeholder, options, value, onChange })
   };
 
   return (
-    <div> 
+    <div>
       <div className='relative' ref={dropdownRef}>
-        <div 
+        <div
           className="flex items-center gap-3 px-4 py-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-gray-300 transition-colors bg-white"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -110,11 +110,23 @@ export default function BookingForm() {
 
   const handleSearch = () => {
     console.log('Search clicked:', { district, caseType, bookingType });
-    navigate('/allLawyer', { state: { district, caseType, bookingType } });
+    navigate(
+      `/allLawyer?district=${district}&caseType=${caseType}&bookingType=${bookingType}`
+    );
+
   };
 
   return (
-    <div className="absolute top-[500px] left-1/2 transform -translate-x-1/2 -transform-y-1/2 bg-gray-50 w-2/3 rounded-3xl">
+    <div className="
+  absolute 
+  top-80 left-1/2 
+  -translate-x-1/2 
+  bg-gray-50 
+  w-[95%] sm:w-5/6 md:w-3/4 lg:w-2/3
+  rounded-2xl sm:rounded-3xl
+  p-4 sm:p-6
+  lg:top-[500px]
+">
       <div className=" bg-white rounded-3xl p-4 md:p-8">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">
           Booking Information Form

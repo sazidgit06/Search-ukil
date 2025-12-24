@@ -8,7 +8,7 @@ import { MdOutlineSecurityUpdateGood, MdOutlineVerifiedUser } from "react-icons/
 const WhyUkilLagbe = () => {
   return (
     <div>
-      <div className='sm:mt-90 lg:mt-60'>
+      <div className="pt-130 md:pt-56">
         <div className='text-center'>
           <h2 className="text-4xl font-bold mb-5">Why you take our service</h2>
           <p className='text-lg mb-14'>our service is best</p>
