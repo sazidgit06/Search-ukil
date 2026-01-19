@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { use, useState } from 'react';
 import { Scale, Shield, FileText, Users, Clock, CheckCircle, Phone, Mail, MapPin } from 'lucide-react';
 import allLawyerBanner from '../../assets/allLawyerBanner.jpg';
 import img from '../../assets/allLawyerBanner.jpg';
+import { useLocation } from 'react-router-dom';
 
 export default function Hire() {
+
+
+    const location = useLocation();
+    const lawyer = location.state?.lawyer;
 
     const [formData, setFormData] = useState({
         name: '',
@@ -39,6 +44,9 @@ export default function Hire() {
                             <h2 className="text-3xl font-bold text-center mb-8">
                                 Request a Consultation
                             </h2>
+                            <p className='pb-10'>
+                                You are requesting a consultation with <span className="font-bold">{lawyer?.name}</span>, <span className="font-semibold">{lawyer?.title} </span> of <span className="font-semibold">{lawyer?.courtComplex}</span>, <span className="font-semibold">{lawyer?.district}</span>.  Please fill out the form below, and we will try to get back to you within 24 hours.
+                            </p>
 
                             <div className="space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

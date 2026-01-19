@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import { Star, MapPin, Briefcase, Award, Users, ChevronDown, ChevronUp } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { X, Clock, Video, Send } from 'lucide-react';
 import logo from "../../assets/logo - copy.png"
 
 export default function LawyerProfile() {
+
+  const location = useLocation();
+  const lawyer = location.state?.lawyer;
+  console.log(lawyer)
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState(17);
@@ -92,12 +96,14 @@ export default function LawyerProfile() {
             <div className="flex-1">
               <div className="flex items-start justify-between">
                 <div>
-                  <h1 className="text-2xl font-bold text-gray-900">Lawyer Test</h1>
-                  <p className="text-gray-600">BA, LL.B, LL.M</p>
-                  <p className="text-gray-600">20 years experience</p>
-                  <p className="text-sm text-gray-500">Real Expert Law</p>
-                  <p className="text-sm text-gray-500">District & Sessional Judge Court, Sitanagar</p>
-                  <p className="text-sm text-gray-500">Sitanagar, Ctg, Bangladesh</p>
+                  <h1 className="text-2xl font-bold text-gray-900">{lawyer?.name}</h1>
+                  <p className="text-gray-600">{lawyer?.Degree}</p>
+                  <p className="text-gray-600">{lawyer?.experience}</p>
+                  <p className="text-sm text-gray-500">{lawyer?.services}</p>
+                  <p className="text-sm text-gray-500">{lawyer?.lawyerType} {lawyer?.title} {lawyer?.courtComplex} {lawyer?.district}</p>
+                  <p className="text-sm text-gray-500">{lawyer?.city}, {lawyer?.district},
+                    
+                     Bangladesh</p>
                 </div>
                 <div className="flex flex-col gap-2">
                   <button
@@ -107,14 +113,14 @@ export default function LawyerProfile() {
                     <Send size={20} />
                     Send Message
                   </button>
-                  <button onClick={handleHireBtn} className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 cursor-pointer">
-                    Hire
+                  <button onClick={() => setIsModalOpen(true)} className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 cursor-pointer">
+                    Book Now
                   </button>
                 </div>
               </div>
 
               {isOpen && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+                <div className="fixed inset-0 bg-opacity-50 flex items-center justify-center p-4 z-50">
                   {/* Modal Content */}
                   <div className="bg-white rounded-xl shadow-2xl w-full max-w-md p-6 relative animate-fade-in">
                     {/* Close Button */}
@@ -224,16 +230,16 @@ export default function LawyerProfile() {
                   <div className="text-sm text-gray-500">66 Nitrated - USD 1,200</div>
                 </div>
               </div>
-              <button onClick={() => setIsModalOpen(true)} className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 mt-3 cursor-pointer">
-                Book Now
+              <button onClick={handleHireBtn} className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 mt-3 cursor-pointer">
+                Hire
               </button>
             </div>
 
             {/* book now modal */}
 
             {isModalOpen && (
-              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 ">
-                <div className="bg-white rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto ">
+              <div className="fixed inset-0 bg-black bg-opacity-50 pt-30 flex items-center justify-center p-4 z-50 ">
+                <div className="bg-white rounded-2xl shadow-2xl max-w-5xl w-full max-h-[80vh] overflow-y-auto ">
                   <div className="p-8 ">
                     {/* Header */}
                     <div className="flex justify-between items-start mb-8">
