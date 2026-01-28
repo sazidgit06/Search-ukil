@@ -59,8 +59,8 @@ export default function LawyerProfile() {
   };
 
   const navigate = useNavigate()
-  const handleHireBtn = () => {
-    navigate("/hire");
+  const handleHireBtn = (lawyer) => {
+    navigate("/hire", { state: { lawyer } });
   }
 
   const [expandedFAQ, setExpandedFAQ] = useState(null);
@@ -230,7 +230,7 @@ export default function LawyerProfile() {
                   <div className="text-sm text-gray-500">66 Nitrated - USD 1,200</div>
                 </div>
               </div>
-              <button onClick={handleHireBtn} className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 mt-3 cursor-pointer">
+              <button onClick={() => handleHireBtn(lawyer)} className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 mt-3 cursor-pointer">
                 Hire
               </button>
             </div>
